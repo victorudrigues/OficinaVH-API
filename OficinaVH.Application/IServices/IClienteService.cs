@@ -11,5 +11,8 @@ namespace OficinaVH.Application.IServices
     public interface IClienteService
     {
         List<ClienteDTO> GetClientes();
+        string PostClient(Clientes clientes);
+        string UpdateClient(Clientes clientes);
+        string DeleteClient(Guid Id);
     }
 }

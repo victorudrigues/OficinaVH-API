@@ -16,7 +16,7 @@ namespace OficinaVH.Domain.Entities
         public string Ano { get; set; } = string.Empty;
         public Guid? ProdutoID { get; set; }
         public List<Produtos>? Produtos { get; set; }
-        public Clientes? Clientes { get; set; }
+        public Clientes? Cliente { get; set; }
  
     }
 }

@@ -9,8 +9,8 @@ namespace OficinaVH.Domain.Entities
     public class Clientes
     {
         public Guid Id { get; set; }
-        public string? Cliente { get; set; } 
+        public string?  Cliente { get; set; } 
         public Guid? CarroID { get; set; }
-        public List<Carro>? Carros { get; set; }
+        public List<Carro>? Carros { get; set; } 
     }
 }

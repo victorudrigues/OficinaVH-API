@@ -25,7 +25,7 @@ namespace OficinaVH.Infra.Infrastructure.OficinaContext
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Cliente).IsRequired();
 
-                entity.HasMany(e => e.Carros).WithOne(c => c.Clientes).HasForeignKey(c => c.ClienteID);
+                entity.HasMany(e => e.Carros).WithOne(c => c.Cliente).HasForeignKey(c => c.ClienteID);
             });
 
             modelBuilder.Entity<Produtos>(entity =>
@@ -42,7 +42,7 @@ namespace OficinaVH.Infra.Infrastructure.OficinaContext
                 entity.Property(e => e.Modelo).IsRequired();
                 entity.Property(e => e.Placa).IsRequired();
                 entity.Property(e => e.Ano).IsRequired(false);
-                entity.HasOne(e => e.Clientes).WithMany(c => c.Carros).HasForeignKey(e => e.ClienteID);
+                entity.HasOne(e => e.Cliente).WithMany(c => c.Carros).HasForeignKey(e => e.ClienteID);
             });
         }
     }

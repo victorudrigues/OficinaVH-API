@@ -10,5 +10,8 @@ namespace OficinaVH.Domain.IRepository
     public interface IClienteRepository
     {
         List<Clientes> GetClientes();
+        void PostClient(Clientes cliente);
+        Clientes GetCliente(Guid id);
+        void DeleteCliente(Clientes Cliente);
     }
 }
