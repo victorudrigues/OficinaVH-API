@@ -1,0 +1,6 @@
+@OficinaVH.API_HostAddress = http://localhost:5035
+
+GET {{OficinaVH.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

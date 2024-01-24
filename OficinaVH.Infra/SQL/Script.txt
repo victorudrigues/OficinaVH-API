@@ -1,0 +1,34 @@
+﻿-- Criar a tabela 'Clientes'
+CREATE TABLE Clientes (
+    Id UNIQUEIDENTIFIER PRIMARY KEY NOT NULL DEFAULT NEWID(),
+    ClienteName NVARCHAR(200) NOT NULL,
+    CarroID UNIQUEIDENTIFIER NOT NULL
+);
+
+-- Criar a tabela 'Produtos'
+CREATE TABLE Produtos (
+    Id UNIQUEIDENTIFIER PRIMARY KEY NOT NULL DEFAULT NEWID(),
+    Produto NVARCHAR(200) NOT NULL,
+    Valor DECIMAL(10, 2) NOT NULL
+);
+
+-- Criar a tabela 'Carro' sem chaves estrangeiras
+CREATE TABLE Carro (
+    Id UNIQUEIDENTIFIER PRIMARY KEY NOT NULL DEFAULT NEWID(),
+    Modelo NVARCHAR(100) NOT NULL,
+    ClienteID UNIQUEIDENTIFIER NOT NULL,
+    Placa NVARCHAR(10) NOT NULL,
+    Ano NVARCHAR(10),
+    ProdutoID UNIQUEIDENTIFIER NOT NULL
+);
+
+-- Adicionar chaves estrangeiras após a criação das tabelas
+ALTER TABLE Carros
+ADD CONSTRAINT FK_Clientes_Carro FOREIGN KEY (ClienteID) REFERENCES Clientes(Id);
+
+ALTER TABLE Carro
+ADD CONSTRAINT FK_Produtos_Carro FOREIGN KEY (ProdutoID) REFERENCES Produtos(Id);
+
+-- Adicionar chave estrangeira para tabela 'Carro'
+ALTER TABLE Clientes
+ADD CONSTRAINT FK_Carro_Clientes FOREIGN KEY (CarroID) REFERENCES Carro(Id);
