@@ -17,6 +17,7 @@ namespace OficinaVH.Application.Mappings
         {
             CreateMap<Carro, CarroDTO>().ReverseMap();
             CreateMap<Clientes, ClienteDTO>().ReverseMap();
+            CreateMap<Produtos, ProdutoDTO>().ReverseMap();
         }
     }
 }

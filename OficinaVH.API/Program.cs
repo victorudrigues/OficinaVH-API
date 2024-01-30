@@ -22,6 +22,8 @@ builder.Services.AddScoped<ICarroService, CarroService>();
 builder.Services.AddScoped<ICarroRepository, CarroRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IProdutoService, ProdutoService>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 //auto mapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));

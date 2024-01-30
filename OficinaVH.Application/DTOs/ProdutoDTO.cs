@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OficinaVH.Domain.Entities
+namespace OficinaVH.Application.DTOs
 {
-    public class Produtos
+    public class ProdutoDTO
     {
-        public Guid? Id { get; set; }
+        public Guid? id { get; set; }
         public string Produto { get; set; } = string.Empty;
         public decimal Valor { get; set; }
-        public Carro? Carro { get; set; }
     }
 }
