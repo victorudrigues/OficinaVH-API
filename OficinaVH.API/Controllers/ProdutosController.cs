@@ -43,5 +43,32 @@ namespace OficinaVH.API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPut("Atualizar")]
+        public IActionResult UpdateProduct(Produtos produto)
+        {
+            try
+            {
+                _produtoService.UpdateProduct(produto);
+                return Ok("Produto atualizado com Sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpDelete("Deletar/{id}")]
+        public IActionResult DeleteProduct(Guid id)
+        {
+            try
+            {   
+                _produtoService.DeleteProduct(id);
+                return Ok("Produto deletado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

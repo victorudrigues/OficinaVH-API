@@ -11,5 +11,7 @@ namespace OficinaVH.Domain.IRepository
     {
         List<Produtos> GetProdutos();
         string PostProduto(Produtos produto);
+        Produtos GetProduct(Guid? id);
+        void DeleteProduct(Produtos produto);
     }
 }

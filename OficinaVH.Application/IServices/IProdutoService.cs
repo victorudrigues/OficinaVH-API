@@ -12,5 +12,8 @@ namespace OficinaVH.Application.IServices
     {
         List<ProdutoDTO> GetProdutos();
         string PostProduct(Produtos produto);
+        string UpdateProduct(Produtos produto);
+        Produtos GetProduct(Guid? id);
+        void DeleteProduct(Guid id);
     }
 }

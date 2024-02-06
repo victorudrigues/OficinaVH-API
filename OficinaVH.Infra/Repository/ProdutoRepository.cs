@@ -20,6 +20,17 @@ namespace OficinaVH.Infra.Repository
             _context = context;
         }
 
+        public void DeleteProduct(Produtos produto)
+        {
+            _context.Produtos.Remove(produto);
+            _context.SaveChanges();
+        }
+
+        public Produtos GetProduct(Guid? id)
+        {
+            return _context.Produtos.FirstOrDefault(x => x.Id == id);
+        }
+
         public List<Produtos> GetProdutos()
         {
             return _context.Produtos.ToList();
